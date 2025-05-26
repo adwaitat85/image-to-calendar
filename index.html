@@ -73,14 +73,22 @@
 
       document.getElementById("status").textContent = "Processing...";
 
-      fetch("https://script.google.com/macros/s/AKfycbwkFVLeMBzFbUvy-zVUCpuRoaAsuojC9zlK-n8-ge84sE0DnxWAzFmqN7uH7tepbzXgEQ/exec", {
+     /* fetch("https://script.google.com/macros/s/AKfycbwkFVLeMBzFbUvy-zVUCpuRoaAsuojC9zlK-n8-ge84sE0DnxWAzFmqN7uH7tepbzXgEQ/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({ image: base64Image })
       })
-      .then(res => res.json())
+      .then(res => res.json())*/
+fetch("https://script.google.com/macros/s/AKfycbwkFVLeMBzFbUvy-zVUCpuRoaAsuojC9zlK-n8-ge84sE0DnxWAzFmqN7uH7tepbzXgEQ/exec", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ image: "test" }) // dummy base64 string
+})
+.then(res => res.json())
+.then(console.log)
+.catch(console.error);
       .then(data => {
         if (data.success) {
           document.getElementById("status").textContent = `✅ ${data.events.length} event(s) added to your calendar.`;
