@@ -75,7 +75,7 @@
     });
 
     async function processImage() {
-      const response = await fetch('https://your-deployed-linebot-api.com/?img_base64=' + encodeURIComponent(imageBase64));
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwkFVLeMBzFbUvy-zVUCpuRoaAsuojC9zlK-n8-ge84sE0DnxWAzFmqN7uH7tepbzXgEQ/exec' + encodeURIComponent(imageBase64));
       const data = await response.json();
 
       const tbody = document.getElementById('eventBody');
@@ -106,7 +106,7 @@
         });
       });
 
-      await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_APPS_SCRIPT/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwkFVLeMBzFbUvy-zVUCpuRoaAsuojC9zlK-n8-ge84sE0DnxWAzFmqN7uH7tepbzXgEQ/exec', {
         method: 'POST',
         body: JSON.stringify({ events }),
         headers: { 'Content-Type': 'application/json' }
